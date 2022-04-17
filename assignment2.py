@@ -2,7 +2,6 @@ import streamlit as st
 from ingest import analyze_predicted_price, data_file
 import pandas as pd
 import numpy as np
-import matplotlib
 
 #################################################################
 ################## Page Settings ################################
@@ -37,7 +36,7 @@ page_selected = st.sidebar.radio("Menu", ["Home", "Model"])
 if page_selected == "Home":
     
     ######### Load labeled data from datastore #################
-
+    analyze_predicted_price()
     df = pd.read_csv(data_file)
     df['color'] = df['price'].apply(lambda x: 'orange' if x == 0 else 'skyblue')
     df['price_range'] = df['price'].apply(lambda x: 'high' if x == 1 else 'low')
