@@ -100,24 +100,6 @@ if page_selected == "Home":
         st.write("This plot shows the total counts of high and low price for each year that user enteres. Enter a year up to 2020 to see whether it's more likely to be high price or low price. Feel free to select fueltype and car brand as well to see how the combination affects the car price.")
     st.markdown('---')
 
-    title = st.text_input('Mile (Enter a whole number such as 10000, 20000 etc. From 10000 Up to 250000)', 10000)
-    st.write("The mileage you've entered is", title)
-    
-    if title != "All":
-        df = df.loc[df.mileage == int(title), :]
-
-    ######### Mile vs Price Plot ###################################
-    col1, col2 = st.columns((2,1))
-    with col1: 
-        ax = pd.crosstab(df.mileage, df.price_range).plot(
-                kind="bar", 
-                figsize=(6,2), 
-                xlabel = "Price Range",
-                color={'low':'orange', 'high': 'skyblue'})
-        st.pyplot(ax.figure)
-    with col2:
-        st.write("This plot shows the total counts of high and low price for each year that user enteres. Enter a year up to 2020 to see whether it's more likely to be high price or low price. Feel free to select fueltype and car brand as well to see how the combination affects the car price.")
-    st.markdown('---')
 
 ################################################################
 ################ Model Page ######################
