@@ -36,7 +36,7 @@ page_selected = st.sidebar.radio("Menu", ["Home", "Model"])
 if page_selected == "Home":
     
     ######### Load labeled data from datastore #################
-    analyze_predicted_price()
+
     df = pd.read_csv(data_file)
     df['color'] = df['price'].apply(lambda x: 'orange' if x == 0 else 'skyblue')
     df['price_range'] = df['price'].apply(lambda x: 'high' if x == 1 else 'low')
