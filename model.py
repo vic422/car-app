@@ -1,4 +1,5 @@
 import pickle
+import sklearn
 
 def predict_price(df):
     pipe = pickle.load(open('pipeline.pkl', 'rb'))
